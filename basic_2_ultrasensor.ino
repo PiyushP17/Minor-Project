@@ -1,34 +1,37 @@
+// Creating unalterable trigger pin declarations
 const int trigP1=2;
 const int echoP1=3;
 const int trigP2=4;
 const int echoP2= 5;
-// defining variables
+// defining variables for calculating distance in centimeters.
 long duration1,duration2;
 int distance1,distance2;
+// The setup funtion will be implemented at the start of the program.
 void setup() {
-  pinMode(trigPin1, OUTPUT); // Sets the trigPin as an Output
-  pinMode(echoPin1, INPUT); // Sets the echoPin as an Input
-  pinMode(trigPin2, OUTPUT); // Sets the trigPin as an Output
-  pinMode(echoPin2, INPUT); // Sets the echoPin as an Input
-  Serial.begin(9600); // Starts the serial communication
+  // trigger pin as output and echo pin as input
+  pinMode(trigP1, OUTPUT); 
+  pinMode(echoP1, INPUT);
+  pinMode(trigP2, OUTPUT);
+  pinMode(echoP2, INPUT);
+  Serial.begin(9600); 
 }
 void loop() {
-  // Clears the trigPin
-  digitalWrite(trigPin1, LOW);
-  digitalWrite(trigPin2, LOW);
+  // Clears the trigger pins
+  digitalWrite(trigP1, LOW);
+  digitalWrite(trigP2, LOW);
   delayMicroseconds(2);
-  // Sets the trigPin on HIGH state for 10 micro seconds
-  digitalWrite(trigPin1, HIGH);
+  // Sending output for 10 ms from trigger pins
+  digitalWrite(trigP1, HIGH);
   delayMicroseconds(10);
-  digitalWrite(trigPin1, LOW);
-  // Reads the echoPin, returns the sound wave travel time in microseconds
-  duration1 = pulseIn(echoPin1, HIGH);
+  digitalWrite(trigP1, LOW);
+  // Reads input from echo pin
+  duration1 = pulseIn(echoP1, HIGH);
   // Calculating the distance
   distance1= duration1*0.034/2;
   digitalWrite(trigPin2, HIGH);
   delayMicroseconds(10);
-  digitalWrite(trigPin2,LOW);
-  duration2=pulseIn(echoPin2, HIGH);
+  digitalWrite(trigP2,LOW);
+  duration2=pulseIn(echoP2, HIGH);
   distance2= duration2*0.034/2;
   // Prints the distance on the Serial Monitor
   Serial.print("Sensor 1: ");
