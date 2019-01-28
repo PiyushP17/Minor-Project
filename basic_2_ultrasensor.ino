@@ -28,7 +28,7 @@ void loop() {
   duration1 = pulseIn(echoP1, HIGH);
   // Calculating the distance
   distance1= duration1*0.034/2;
-  digitalWrite(trigPin2, HIGH);
+  digitalWrite(trigP2, HIGH);
   delayMicroseconds(10);
   digitalWrite(trigP2,LOW);
   duration2=pulseIn(echoP2, HIGH);
