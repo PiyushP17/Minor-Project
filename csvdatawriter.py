@@ -30,9 +30,6 @@ while True:
                 sensor2 = decoded_bytes
                 print("Sensor 2 : "+str(decoded_bytes))
                 turn = False
-            if i==10: 
-                ser.close()
-                break
             #print("Sensor 1: "+str(decoded_bytes))
             #print("Sensor 2: "+str())
         except:
@@ -52,3 +49,5 @@ while True:
         print("Keyboard Interrupt")
         ser.close()
         break
+    finally:
+        ser.close()
