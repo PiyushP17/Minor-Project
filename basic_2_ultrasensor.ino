@@ -1,3 +1,4 @@
+   
 // Creating unalterable trigger pin declarations
 const int trigP1=2;         //UtlraSonic Sensor 1
 const int echoP1=3;
