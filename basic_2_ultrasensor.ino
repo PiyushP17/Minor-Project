@@ -37,7 +37,7 @@ void setup() {
 }
 void loop() {
   
-  // Clears the trigger pins
+  // Clears the trigger pins for all 4 sensors
   
   digitalWrite(trigP1, LOW);
   
