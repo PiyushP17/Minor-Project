@@ -1,4 +1,4 @@
-   
+// This is the code for operating 4 ultrasonic sensors    
 // Creating unalterable trigger pin declarations
 const int trigP1=2;         //UtlraSonic Sensor 1
 const int echoP1=3;
